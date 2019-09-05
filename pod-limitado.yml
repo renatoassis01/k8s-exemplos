@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: limit-pod
+  labels:
+    name: limit-pod
+spec:
+  containers:
+  - name: limit-pod 
+    image: nginx
+    ports:
+      - containerPort: 80

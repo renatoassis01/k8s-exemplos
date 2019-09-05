@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: meu-pod
+spec:
+  containers:
+    - name: meu-container
+      image: busybox
+      volumeMounts:
+      - mountPath: "/data"
+        name: meu-volume
+  volumes:
+    - name: meu-volume
+      persistentVolumeClaim:
+        claimName: csi-pvc-renato

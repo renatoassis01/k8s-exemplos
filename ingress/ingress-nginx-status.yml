@@ -1,0 +1,12 @@
+kind: Ingress
+metadata:
+  name: nginx-ingress
+spec:
+  rules:
+  - host: 165.22.175.161
+    http: 
+      paths:
+      - backend:
+          serviceName: nginx-ingress
+          servicePort: 18080
+        path: /nginx_status

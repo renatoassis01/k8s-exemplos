@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: nginx
+    app: giropops
+  name: terceiro-deployment
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: nginx
+  template:
+    metadata:
+      labels:
+        run: nginx
+        dc: NL
+    spec:
+      containers:
+      - name: nginx2
+        image: nginx
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+        ports:
+        - containerPort: 80
+          protocol: TCP

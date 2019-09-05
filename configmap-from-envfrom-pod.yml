@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-config-maps-envfrom
+  labels:
+    name: test-config-maps-envfrom
+spec:
+  containers:
+  - name: test-config-maps-envfrom
+    image: busybox
+    command:
+      - sleep
+      - "3600"
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    envFrom:
+    - configMapRef:
+        name: cores-frutas
+         
